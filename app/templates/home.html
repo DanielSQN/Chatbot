@@ -1,0 +1,661 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome home{% endblock %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container app">
+  <div class="row app-one">
+    <div class="col-sm-4 side">
+      <div class="side-one">
+        <div class="row heading">
+          <div class="col-sm-3 col-xs-3 heading-avatar">
+            <div class="heading-avatar-icon">
+              <img src="https://carrerasuniversitarias.com.co/logos/original/logo-fundacion-universitaria-compensar.webp">
+            </div>
+          </div>
+          <div class="col-sm-1 col-xs-1  heading-dot  pull-right">
+            <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
+          </div>
+          <div class="col-sm-2 col-xs-2 heading-compose  pull-right">
+            <i class="fa fa-comments fa-2x  pull-right" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class="row searchBox">
+          <div class="col-sm-12 searchBox-inner">
+            <div class="form-group has-feedback">
+              <h3>Integrantes</h3>
+              <!-- <input id="searchText" type="text" class="form-control" name="searchText" placeholder="Search">
+              <span class="glyphicon glyphicon-search form-control-feedback"></span> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="row sideBar">
+
+          <div class="row sideBar-body" onclick="detalle(`https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/daniel.png`, 'Daniel', 'Estudiante de Ingeniería de Sistemas, Project Manager')">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/daniel.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">Daniel Santiago Quintero
+                </span>
+                </div>
+                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">Project Manager
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row sideBar-body" onclick="detalle(`https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/Cesar.PNG`, 'Cesar', 'Estudiante de Ingeniería de Sistemas, Analista')">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/Cesar.PNG">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">Cesar Augusto Cubillos
+                </span>
+                </div>
+                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">Analista
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row sideBar-body" onclick="detalle(`https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/cristian.png`, 'Cristhian', 'Estudiante de Ingeniería de Sistemas, Analista / Diseñador')">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/cristian.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">Cristhian Fabian Triana
+                </span>
+                </div>
+                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">Analista / Diseñador
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row sideBar-body" onclick="detalle(`https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/brayan.png`, 'Brayan', 'Estudiante de Ingeniería de Sistemas, Programador')">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/brayan.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">Brayan Leonardo Sierra
+                </span>
+                </div>
+                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">Programador
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row sideBar-body" onclick="detalle(`https://www.cruzrojacolombiana.org/wp-content/uploads/2019/12/Mujer-y-hombre_Mesa-de-trabajo-1-copia.png`, 'Sofia', 'Estudiante de Ingeniería de Sistemas, Analista / Diseñador')">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://www.cruzrojacolombiana.org/wp-content/uploads/2019/12/Mujer-y-hombre_Mesa-de-trabajo-1-copia.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">Sofia Alejandra Blanco
+                </span>
+                </div>
+                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">Analista / Diseñador
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row sideBar-body" onclick="detalle(`https://www.cruzrojacolombiana.org/wp-content/uploads/2019/12/Mujer-y-hombre_Mesa-de-trabajo-1-copia.png`, 'Karen', 'Estudiante de Ingeniería de Sistemas, Analista / Diseñador')">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://www.cruzrojacolombiana.org/wp-content/uploads/2019/12/Mujer-y-hombre_Mesa-de-trabajo-1-copia.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">Karen Jineth Suta Anzola​
+                </span>
+                </div>
+                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">Analista / Diseñador
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="side-two">
+        <div class="row newMessage-heading">
+          <div class="row newMessage-main">
+            <div class="col-sm-2 col-xs-2 newMessage-back">
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </div>
+            <div class="col-sm-10 col-xs-10 newMessage-title">
+              New Chat
+            </div>
+          </div>
+        </div>
+
+        <div class="row composeBox">
+          <div class="col-sm-12 composeBox-inner">
+            <div class="form-group has-feedback">
+              <input id="composeText" type="text" class="form-control" name="searchText" placeholder="Search People">
+              <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row compose-sideBar">
+          <div class="row sideBar-body">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">John Doe
+                </span>
+                </div>
+                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">18:18
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row sideBar-body">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://bootdey.com/img/Content/avatar/avatar2.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">John Doe
+                </span>
+                </div>
+                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">18:18
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row sideBar-body">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://bootdey.com/img/Content/avatar/avatar3.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">John Doe
+                </span>
+                </div>
+                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">18:18
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row sideBar-body">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://bootdey.com/img/Content/avatar/avatar4.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">John Doe
+                </span>
+                </div>
+                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">18:18
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row sideBar-body">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://bootdey.com/img/Content/avatar/avatar5.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">John Doe
+                </span>
+                </div>
+                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">18:18
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row sideBar-body">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">John Doe
+                </span>
+                </div>
+                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">18:18
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row sideBar-body">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://bootdey.com/img/Content/avatar/avatar2.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">John Doe
+                </span>
+                </div>
+                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">18:18
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row sideBar-body">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://bootdey.com/img/Content/avatar/avatar3.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">John Doe
+                </span>
+                </div>
+                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">18:18
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row sideBar-body">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://bootdey.com/img/Content/avatar/avatar4.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">John Doe
+                </span>
+                </div>
+                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">18:18
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row sideBar-body">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://bootdey.com/img/Content/avatar/avatar5.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">John Doe
+                </span>
+                </div>
+                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">18:18
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-8 conversation">
+      <div class="row heading">
+        <div class="col-sm-2 col-md-1 col-xs-3 heading-avatar">
+          <div class="heading-avatar-icon">
+            <img src="https://www.cruzrojacolombiana.org/wp-content/uploads/2019/12/Mujer-y-hombre_Mesa-de-trabajo-1.png">
+          </div>
+        </div>
+        <div class="col-sm-8 col-xs-7 heading-name">
+          <a class="heading-name-meta">Usuario Anonimo</a>
+          <span class="heading-online">Online</span>
+        </div>
+        <div class="col-sm-1 col-xs-1  heading-dot pull-right">
+          <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <div class="row message" id="conversation">
+
+        <!-- <div class="row message-previous">
+          <div class="col-sm-12 previous">
+            <a onclick="previous(this)" id="ankitjain28" name="20">
+            Show Previous Message!
+            </a>
+          </div>
+        </div> -->
+
+
+        <!-- <div class="row message-body biendenida">
+          <div class="col-sm-12 mx-3 message-main-receiver-bienvenida">
+            <div class="receiver-bienvenida">
+              <div class="message-text text-center">
+                A continuación, podrá interactuar con el chatbot, para ello, debe escribir su mensaje y presionar enter. El chatbot te brindara un acompañamiento en tu proceso de decisión frente a la migración a la nube que mejor se adapte a tus necesidades.
+                <br>
+                <br>
+                <small style="font-weight: 0;">Proyecto desarrollado para la asignatura "Desarrollo de sistemas de informacion"</small>
+              </div>
+              <span class="message-time pull-right">
+                Sun
+              </span>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="row message-body WS-espera">
+            <div class="col-sm-12 message-main-receiver">
+              <div class="receiver">
+                <div class="message-text-espera">
+                 ...
+                </div>
+              </div>
+            </div>
+        </div> -->
+
+        <!-- <div class="row message-body">
+          <div class="col-sm-12 message-main-receiver">
+            <div class="receiver">
+              <div class="message-text">
+               Hi, what are you doing?!
+              </div>
+              <span class="message-time pull-right">
+                Sun
+              </span>
+            </div>
+          </div>
+        </div> -->
+
+        <!--
+        <div class="row message-body">
+          <div class="col-sm-12 message-main-sender">
+            <div class="sender">
+              <div class="message-text">
+                I am doing nothing man!
+              </div>
+              <span class="message-time pull-right">
+                Sun
+              </span>
+            </div>
+          </div>
+        </div> -->
+        
+      </div>
+
+      <div class="row reply">
+        <div class="col-sm-1 col-xs-1 reply-emojis">
+          <!-- <i class="fa fa-smile-o fa-2x"></i> -->
+        </div>
+        <div class="col-sm-9 col-xs-9 reply-main">
+          <textarea class="form-control" rows="1" id="comment"></textarea>
+        </div>
+        <div class="col-sm-1 col-xs-1 reply-recording">
+          <a href="#" onclick="sendAudio()">
+            <i class="fa fa-microphone fa-2x" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="col-sm-1 col-xs-1 reply-send">
+            <a href="#" onclick="sendQuestion()">
+                <i class="fa fa-send fa-2x" aria-hidden="true"></i>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<style type="text/css">
+
+</style>
+
+<script>
+  var detalle = (e, name, detail) => {
+    $.confirm({
+        backgroundDismiss: 'buttonName',
+        title: '',
+        content: `
+        <img src="${e}">
+        <h3>${name}</h3>
+        <p>${detail}</p>
+        `,
+        buttons: {
+            close: {
+              text: 'Cerrar'
+            }
+        }
+    });
+  }
+
+var alertaDialog = (msmTitle, msmContent, color) => {
+    $.confirm({
+        title: msmTitle,
+        content: msmContent,
+        // autoClose: 'ok|4000',
+        theme: 'modern',
+        buttons: {
+          ok: {
+            text: 'Aceptar', // text for button
+            btnClass: `btn-${color}`, // class for the button
+            keys: ['enter', 'a'], // keyboard event for button
+          }
+        }
+    });
+  }
+
+    var optionsMSM = {
+        bienvenida: (date) => {
+        return `
+        <div class="row message-body biendenida">
+          <div class="col-sm-12 mx-3 message-main-receiver-bienvenida">
+            <div class="receiver-bienvenida">
+              <div class="message-text text-center">
+                A continuación, podrá interactuar con el chatbot, para ello, debe escribir su mensaje y presionar enter. El chatbot te brindara un acompañamiento en tu proceso de decisión frente a la migración a la nube que mejor se adapte a tus necesidades.
+                <br>
+                <br>
+                <small style="font-weight: 0;">Proyecto desarrollado para la asignatura "Desarrollo de sistemas de informacion"</small>
+              </div>
+              <span class="message-time pull-right">
+                ${date}
+              </span>
+            </div>
+          </div>
+        </div>`
+        },
+        espera : `
+        <div class="row message-body WS-espera">
+            <div class="col-sm-12 message-main-receiver">
+              <div class="receiver">
+                <div class="message-text-espera">
+                 ...
+                </div>
+              </div>
+            </div>
+        </div>
+        `,
+        receiver : (mensaje, date) => {
+            return `<div class="row message-body">
+                <div class="col-sm-12 message-main-receiver">
+                    <div class="receiver">
+                    <div class="message-text">
+                        ${mensaje}
+                    </div>
+                    <span class="message-time pull-right">
+                        ${date}
+                    </span>
+                    </div>
+                </div>
+                </div>`
+            },
+        sender : (mensaje, date) => {
+            return `
+            <div class="row message-body">
+            <div class="col-sm-12 message-main-sender">
+                <div class="sender">
+                <div class="message-text">
+                    ${mensaje}
+                </div>
+                <span class="message-time pull-right">
+                    ${date}
+                </span>
+                </div>
+            </div>
+            </div> `
+        }
+    }
+
+
+    var actual = 0;
+    var DOMConver = $('#conversation')
+    DOMConver.append(optionsMSM.bienvenida(new Date().toLocaleTimeString()))
+
+    DOMConver.append(optionsMSM.espera)
+    setTimeout(() => {
+      $('.WS-espera')[0].remove()
+      DOMConver.append(optionsMSM.receiver('Por favor, indica tu nombre:', new Date().toLocaleTimeString()))
+    }, 2000);
+
+
+    $('#comment').on('keydown',function(e){
+      if(e.which == '13'){
+        sendQuestion()
+      } 
+    });
+
+    var sendAudio = () => {
+      alertaDialog(null, 'No se ha implementado la funcionalidad de audio', 'blue')
+    }
+    
+    var sendQuestion = () => {
+      $('.biendenida').remove()
+
+      var pregunta = $('#comment')[0].value
+      // console.log(pregunta);
+      //remove \n \r ' '
+      if(!pregunta.replace(/(\r\n|\n|\r)/gm,"").trim()){
+        alertaDialog(null, 'Debe ingresar al menos un valor en el campo texto', 'orange')
+        return;
+      }
+
+      DOMConver.append(optionsMSM.sender(pregunta, new Date().toLocaleTimeString()))
+      DOMConver[0].scrollTop = DOMConver[0].scrollHeight
+      $('#comment')[0].value = ''
+      $('#comment')[0].focus()
+      setTimeout(() => {
+        DOMConver.append(optionsMSM.espera)
+        DOMConver[0].scrollTop = DOMConver[0].scrollHeight
+          fetch('iHaveQuestion', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                  contId: actual,
+                  user_input: pregunta
+              })
+          }).then(res => res.text())
+          .then(data => {
+            var texto = data.replace('Nombre|', '')
+              $('.WS-espera')[0].remove()
+              // validate if data contains a specific string
+              if(data.includes('Nombre|')){
+                $('.heading-name-meta').text('Usuario (' + data.replace('Nombre|', '') + ')')
+                texto = '¡Hola!, ' + texto + ' ¿En qué te puedo ayudar?'
+              }
+              DOMConver.append(optionsMSM.receiver(texto, new Date().toLocaleTimeString()))
+              DOMConver[0].scrollTop = DOMConver[0].scrollHeight
+              // console.log('data', data)
+          })
+      }, 1000)
+
+      actual++
+    }
+    
+    // $(function(){
+    //     $(".heading-compose").click(function() {
+    //     $(".side-two").css({
+    //         "left": "0"
+    //     });
+    //     });
+
+    //     $(".newMessage-back").click(function() {
+    //     $(".side-two").css({
+    //         "left": "-100%"
+    //     });
+    //     });
+    // })
+</script>
+{% endblock %}
