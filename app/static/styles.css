@@ -18,12 +18,52 @@ span {
 } 
 
 
+.replyOf{
+  background: rgba(0, 0, 0, .2);
+  padding: 10px;
+  color: rgba(0, 0, 0, .5); 
+  text-shadow: none; 
+  border-radius: 8px; 
+  border-left: 4px solid #EC4E02;
+}
+
+.replyOf-title{
+  color: #EC4E02;
+}
+
 
 body {
   /* background: url("https://www.bootdey.com/img/bgy.png") no-repeat fixed center; */
   /* background: url("https://img.lovepik.com/background/20211021/large/lovepik-orange-gray-gradient-lines-background-image_400151146.jpg") no-repeat fixed center; */
   background: url("https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/fondo_1.png") no-repeat fixed center;
   background-size: cover;
+}
+
+.bg-btn-custom{
+  background: #FEEFC2;
+  color: #F54802;
+  font-weight: 400;
+  text-decoration: none;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.bg-btn-custom:focus{
+  outline:none;
+  color: #ec4c028c;
+  box-shadow:none;
+}
+
+.bg-btn-custom:hover{
+  background: #FDF3D7;
+  color: #ec4c028c;
+  font-weight: 400;
+}
+
+.clicked{
+  background: #FDF3D7;
+  color: #ec4c028c;
+  font-weight: 400;
 }
 
 .fa-2x {
@@ -116,9 +156,10 @@ body {
   white-space: nowrap;
   color: #000;
   display: block;
+
 }
 .heading-online {
-  display: none;
+  /* display: none; */
   padding: 0 5px;
   font-size: 12px;
   color: #93918f;
@@ -252,7 +293,7 @@ body {
   margin: 0 !important;
   height: 100px;
   width: 100%;
-  background-color: #00bfa5;
+  background-color: #FCBE1B;
   z-index: 1001;
 }
 
@@ -292,8 +333,9 @@ body {
 .composeBox-inner {
   height: 100%;
   width: 100%;
-  padding: 10px !important;
+  /* padding: 20px !important; */
   background-color: #fbfbfb;
+  text-align: center;
 }
 
 .composeBox-inner input:focus {
@@ -497,7 +539,22 @@ body {
   box-shadow: none;
 }
 
+/* @media screen and (min-width: 700px) {
+  .side{
+    display: none;
+  }
+} */
+
 @media screen and (max-width: 700px) {
+  
+  .side{
+    display: none;
+  }
+
+  .heading-online{
+    color: #fff;
+  }
+
   .app {
     top: 0;
     height: 100%;
