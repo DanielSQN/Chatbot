@@ -1,0 +1,44 @@
+[
+    {
+        "nombre": "Daniel Santiago Quintero",
+        "correo": "daniel.quintero@ucompensar.edu.co",
+        "rol" : "Project Manager / Desarrollador",
+        "moreInfo" : "Estudiante de Ingenieria de sistemas<br><b>6to Semestre</b>",
+        "img": "https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/daniel.png"
+    },
+    {
+        "nombre": "Cesar Augusto Cubillos",
+        "correo": "caugustocubillos@ucompensar.edu.co",
+        "rol" : "Analista / Diseñador",
+        "moreInfo" : "Estudiante de Ingenieria de sistemas<br><b>6to Semestre</b>",
+        "img": "https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/Cesar.PNG"
+    },
+    {
+        "nombre": "Cristhian Fabian Triana",
+        "correo": "cftriana@ucompensar.edu.co",
+        "rol" : "Analista / Diseñador",
+        "moreInfo" : "Estudiante de Ingenieria de sistemas<br><b>6to Semestre</b>",
+        "img": "https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/cristian.png"
+    },
+    {
+        "nombre": "Brayan Leonardo Sierra",
+        "correo": "blsierra@ucompensar.edu.co",
+        "rol" : "Programador",
+        "moreInfo" : "Estudiante de Ingenieria de sistemas<br><b>6to Semestre</b>",
+        "img": "https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/brayan.png"
+    },
+    {
+        "nombre": "Sofia Alejandra Blanco",
+        "correo": "sablanco@ucompensar.edu.co",
+        "rol" : "Analista / Diseñador",
+        "moreInfo" : "---",
+        "img": "https://www.cruzrojacolombiana.org/wp-content/uploads/2019/12/Mujer-y-hombre_Mesa-de-trabajo-1-copia.png"
+    },
+    {
+        "nombre": "Karen Jineth Suta Anzola",
+        "correo": "ksuta@ucompensar.edu.co",
+        "rol" : "Analista / Diseñador",
+        "moreInfo" : "---",
+        "img": "https://www.cruzrojacolombiana.org/wp-content/uploads/2019/12/Mujer-y-hombre_Mesa-de-trabajo-1-copia.png"
+    }
+]

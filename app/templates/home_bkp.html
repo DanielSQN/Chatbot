@@ -1,0 +1,645 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome home{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container app">
+  <div class="row app-one">
+    <!-- Descomentar cuando el chat quede OK -->
+    <div class="col-sm-0 col-md-4 side">
+      <div class="side-one">
+        <div class="row heading">
+
+          <div class="col-sm-3 col-xs-3 heading-avatar">
+            <div class="heading-avatar-icon">
+              <img src="https://carrerasuniversitarias.com.co/logos/original/logo-fundacion-universitaria-compensar.webp">
+            </div>
+          </div>
+          <div class="col-sm-1 col-xs-1  heading-dot  pull-right">
+            <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
+          </div>
+          <div class="col-sm-2 col-xs-2 heading-compose pull-right">
+            <!-- <i class="fa fa-comments fa-2x  pull-right" aria-hidden="true"></i> -->
+            <!-- Resumen -->
+            <i class="fa fa-pie-chart fa-2x pull-right" aria-hidden="true"></i>
+            <!-- <br> -->
+            <!-- <span>Analisis</span> -->
+          </div>
+
+        </div>
+
+        <div class="row searchBox">
+          <div class="col-sm-12 searchBox-inner">
+            <div class="form-group has-feedback">
+              <h3>Integrantes del equipo</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="row sideBar" id="integrantes"></div>
+      </div>
+
+      <div class="side-two">
+        <div class="row newMessage-heading">
+          <div class="row newMessage-main">
+            <div class="col-sm-2 col-xs-2 newMessage-back">
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </div>
+            <div class="col-sm-10 col-xs-10 newMessage-title">
+              Volver
+            </div>
+          </div>
+        </div>
+
+        <div class="row composeBox">
+          <div class="col-sm-12 composeBox-inner" style="padding-left: 10px;">
+            <h3>Analisis de los flujos indicados</h3>
+            <!-- <div class="form-group has-feedback">
+              <input id="composeText" type="text" class="form-control" name="searchText" placeholder="Search People">
+              <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            </div> -->
+          </div>
+        </div>
+
+        <div class="row compose-sideBar">
+          <div class="row sideBar-body">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://www.freeiconspng.com/thumbs/storage-icon/warehouse-storage-icon-22.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <b><span class="name-meta">Almacenamiento</span></b>
+                  <br>
+                  <span class="name-meta" id="valueAlmacenamiento">Calculando</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row sideBar-body">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://symbols.getvecta.com/stencil_28/69_virtual-machine.8202662932.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <b><span class="name-meta">Maquina Virtual</span></b>
+                  <br>
+                  <span class="name-meta" id="valueMV">Calculando ...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row sideBar-body">
+            <div class="col-sm-3 col-xs-3 sideBar-avatar">
+              <div class="avatar-icon">
+                <img src="https://cdn.pixabay.com/photo/2020/03/17/17/46/database-4941338_1280.png">
+              </div>
+            </div>
+            <div class="col-sm-9 col-xs-9 sideBar-main">
+              <div class="row">
+                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <b><span class="name-meta">Base de datos</span></b>
+                  <br>
+                  <span class="name-meta" id="valueMV">Calculando ...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  <!-- conversacion -->
+
+    <div class="col-sm-12 col-md-8 conversation">
+      <div class="row heading">
+        <div class="col-sm-1 col-md-1 col-xs-2 heading-avatar">
+          <div class="heading-avatar-icon">
+            <img src="https://www.cruzrojacolombiana.org/wp-content/uploads/2019/12/Mujer-y-hombre_Mesa-de-trabajo-1.png">
+          </div>
+        </div>
+        <div class="col-sm-9 col-xs-9 heading-name">
+          <a class="heading-name-meta">Usuario Anonimo</a>
+          <!-- <p class="heading-name-meta">Usuario Anonimo</p> -->
+          <span class="heading-online">En Linea</span>
+        </div>
+        <div class=" col-xs-1  heading-dot pull-right">
+          <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <div class="row message" id="conversation">
+
+        <!-- <div class="row message-previous">
+          <div class="col-sm-12 previous">
+            <a onclick="previous(this)" id="ankitjain28" name="20">
+            Show Previous Message!
+            </a>
+          </div>
+        </div> -->
+
+
+        <!-- <div class="row message-body biendenida">
+          <div class="col-sm-12 mx-3 message-main-receiver-bienvenida">
+            <div class="receiver-bienvenida">
+              <div class="message-text text-center">
+                A continuación, podrá interactuar con el chatbot, para ello, debe escribir su mensaje y presionar enter. El chatbot te brindara un acompañamiento en tu proceso de decisión frente a la migración a la nube que mejor se adapte a tus necesidades.
+                <br>
+                <br>
+                <small style="font-weight: 0;">Proyecto desarrollado para la asignatura "Desarrollo de sistemas de informacion"</small>
+              </div>
+              <span class="message-time pull-right">
+                Sun
+              </span>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="row message-body WS-espera">
+            <div class="col-sm-12 message-main-receiver">
+              <div class="receiver">
+                <div class="message-text-espera">
+                 ...
+                </div>
+              </div>
+            </div>
+        </div> -->
+
+        <!-- <div class="row message-body">
+          <div class="col-sm-12 message-main-receiver">
+            <div class="receiver">
+				<div class="imgText">
+					<img src="https://hips.hearstapps.com/hmg-prod/images/question-mark-icon-on-white-puzzle-royalty-free-image-917901148-1558452934.jpg?crop=1.00xw:0.752xh;0,0.137xh&resize=1200:*" alt="question">
+				</div>
+				<div class="message-text">
+
+					Hi, what are you doing?!
+				</div>
+				<span class="message-time pull-right">
+					Sun
+				</span>
+            </div>
+          </div>
+        </div> -->
+
+        
+        <!-- <div class="row message-body">
+          <div class="col-sm-12 message-main-sender">
+            <div class="sender">
+              <div class="message-text">
+                I am doing nothing man!dsadsa
+              </div>
+              <span class="message-time pull-right">
+                Sun
+              </span>
+            </div>
+          </div>
+        </div> -->
+        
+      </div>
+
+      <div class="row reply">
+        <div class="col-sm-1 col-xs-1 reply-emojis">
+          <!-- <i class="fa fa-smile-o fa-2x"></i> -->
+        </div>
+        <div class="col-sm-10 col-xs-10 reply-main">
+          <textarea class="form-control" rows="1" id="comment"></textarea>
+        </div>
+
+        <!-- Si se descomenta agregar alert indicando que la opcion se encuentra en desarrollo -->
+        <!-- <div class="col-sm-1 col-xs-1 reply-recording">
+          <a href="#" onclick="sendAudio()">
+            <i class="fa fa-microphone fa-2x" aria-hidden="true"></i>
+          </a>
+        </div> -->
+        <div class="col-sm-1 col-xs-1 reply-send">
+            <a href="#" onclick="sendQuestion()">
+                <i class="fa fa-send fa-2x" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<style type="text/css">
+
+</style>
+
+<script>
+
+
+  var detalle = (img, nombre, correo, rol, moreInfo) => {
+    $.confirm({
+        backgroundDismiss: 'buttonName',
+        title: '',
+        content: `
+        <img src="${img}">
+        <h3>${nombre}</h3>
+        <p>${rol}</p>
+        <hr>
+        <a href="mailto:${correo}">${correo}</a>
+        <p>${moreInfo}</p>
+
+        `,
+        buttons: {
+            close: {
+              text: 'OK'
+            }
+        }
+    });
+  }
+
+var alertaDialog = (msmTitle, msmContent, color) => {
+    $.confirm({
+        title: msmTitle,
+        content: msmContent,
+        // autoClose: 'ok|4000',
+        theme: 'modern',
+        buttons: {
+          ok: {
+            text: 'Aceptar', // text for button
+            btnClass: `btn-${color}`, // class for the button
+            keys: ['enter', 'a'], // keyboard event for button
+          }
+        }
+    });
+  }
+
+  var alertaSpeech = (msmTitle, msmContent, color) => {
+    console.log('alertaSpeech');
+     // toggle open close.
+
+    
+  }
+
+    var optionsMSM = {
+        bienvenida: () => {
+        return `
+          <div class="row message-body biendenida">
+            <div class="col-sm-12 mx-3 message-main-receiver-bienvenida">
+              <div class="receiver-bienvenida">
+                <div class="message-text text-center">
+                  Soy un <b>Chatbot</b> desarrollado por un equipo de estudiantes, como proyecto para la asignatura <i>"Desarrollo de sistemas de información"</i> de la carrera Ingenieria de sistemas 6to Semestre.
+                  <br>
+                  <br>
+                  Podrás interactuar conmigo seleccionando alguna de las opciones propuestas para la pregunta en la que nos encontremos. Espero, poder brindar un acompañamiento optimo en tu proceso de decisión frente a la migración a la nube que mejor se adapte a tus necesidades.
+                </div>
+                <span class="message-time pull-right">
+                  ${formatAMPM(new Date)}
+                  <i class="fa fa-light fa-check-double"></i>
+                </span>
+              </div>
+            </div>
+          </div>`
+        },
+        espera : `
+        <div class="row message-body WS-espera">
+            <div class="col-sm-12 message-main-receiver">
+              <div class="receiver">
+                <div class="message-text-espera">
+                 ...
+                </div>
+              </div>
+            </div>
+        </div>
+        `,
+        // receiver : (mensaje) => {
+        //     return `<div class="row message-body">
+        //         <div class="col-sm-12 message-main-receiver">
+        //             <div class="receiver">
+        //             <div class="message-text">
+        //                 ${mensaje}
+        //             </div>
+        //             <span class="message-time pull-right">
+        //                 ${new Date().toLocaleTimeString()}
+        //             </span>
+        //             </div>
+        //         </div>
+        //         </div>`
+        //     },
+        receiver : (img, mensaje, options) => {
+            return `<div class="row message-body">
+                      <div class="col-sm-12 message-main-receiver">
+                        <div class="receiver">
+						  ${
+							img
+							?
+								`<div class="imgText">
+									<img src="https://hips.hearstapps.com/hmg-prod/images/question-mark-icon-on-white-puzzle-royalty-free-image-917901148-1558452934.jpg?crop=1.00xw:0.752xh;0,0.137xh&resize=1200:*" alt="question">
+								</div>`
+							: ''
+						  }
+                          <div class="message-text">
+                            ${mensaje}
+                          </div>
+                          <div style="margin-top: 5px;">
+                            ${options}
+                          </div>
+                          <span class="message-time pull-right">
+                            ${formatAMPM(new Date)}
+                          </span>
+                        </div>
+                      </div>
+                    </div>`
+            },
+        sender : (mensaje, BandReply, msmBefore) => {
+            var reply = BandReply
+                        ? `<div class="replyOf">
+                            <span class="replyOf-title">Chatbot - Cloud</span>
+                            <br>
+                            <span class="replyOf-text">${msmBefore}</span>
+                          </div>`
+                        : ``;
+
+            return `
+            <div class="row message-body">
+              <div class="col-sm-12 message-main-sender">
+                  <div class="sender">
+                    ${reply}
+                  <div class="message-text">
+                      ${mensaje}
+                  </div>
+                  <span class="message-time pull-right">
+                      ${formatAMPM(new Date)}
+                      <i class="fa fa-light fa-check-double"></i>
+                  </span>
+                  </div>
+              </div>
+            </div> `
+        }
+    }
+
+	function formatAMPM(date) {
+		var hours = date.getHours();
+		var minutes = date.getMinutes();
+		var ampm = hours >= 12 ? 'p.m.' : 'a.m.';
+		hours = hours % 12;
+		hours = hours ? hours : 12; // the hour '0' should be '12'
+		minutes = minutes < 10 ? '0'+minutes : minutes;
+		var strTime = hours + ':' + minutes + ' ' + ampm;
+		return strTime;
+	}
+
+
+    var bestRecomendacionAlmacenamiento = (type, cantidadAlmacenamiento) => {
+		
+		var valueFilter = costos.filter((item) => item.type == type && item.cantidad == cantidadAlmacenamiento)[0]
+		var arrFilter = [
+			`¡Muy bien! Ya que has elegido ${cantidadAlmacenamiento} y con un servicio ${type}.<br>Te recomendare <b>${valueFilter.inf}</b>, que tiene un costo de U${valueFilter.precioxGB} por GB y una tarifa al mes de U${valueFilter.precioMes}`
+			
+			,`¡Excelente, teniendo en cuenta que quieres un servicio de almacenamiento ${type} de ${allKeys.cantidad_almacenamiento}.<br>Te recomiendo <b>${valueFilter.inf}</b>, este tiene un precio de U${valueFilter.precioxGB} por GB lo que significa que te costara U${valueFilter.precioMes} por un mes`
+		]
+
+		return arrFilter[Math.floor(Math.random() * arrFilter.length)]     
+    }
+
+    	var allKeys = {}
+        var loadIntegrantes = () => {
+
+          // call to API to get integrantes
+          var htmlIntegrantes = ''
+
+          fetch('/integrantes')
+          .then(response => response.json())
+          .then(integrantes => {
+            integrantes.forEach( item => {
+              htmlIntegrantes += `<div class="row sideBar-body">
+                                  <div class="col-sm-3 col-xs-3 sideBar-avatar">
+                                    <div class="avatar-icon" onclick="detalle('${item.img}', '${item.nombre}', '${item.correo}','${item.rol}', '${item.moreInfo}')">
+                                      <img src="${item.img}">
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-9 col-xs-9 sideBar-main">
+                                    <div class="row">
+                                      <div class="col-sm-12 col-xs-12 sideBar-name">
+                                        <span class="name-meta">${item.nombre}</span>
+										<span class="name-meta"><small><a class="correo_person" href="mailto:${item.correo}" style="text-decoration:none">${item.correo}</a></small></span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>`
+            })
+  
+            $('#integrantes').html(htmlIntegrantes)
+          })
+          // var integrantes = 
+
+        }
+
+        var inicioChat = () => {
+
+          $('#valueAlmacenamiento').html('Calculando ...')
+          
+          $('.heading-name-meta').text(`Usuario Anonimo`)
+          $('#conversation').html('')
+          DOMConver.append(optionsMSM.bienvenida())
+          // DOMConver.append(optionsMSM.espera)
+        } 
+
+        var DOMConver = $('#conversation')
+        DOMConver.append(optionsMSM.bienvenida())
+
+        var receiverMSM = (img, msm, options) => {
+          // decode bas64
+          DOMConver.append(optionsMSM.receiver(img, atob(msm), options))
+          DOMConver[0].scrollTop = DOMConver[0].scrollHeight
+        }
+
+        var checkPregunta = (pregunta) => {
+			$('.fa-check-double').addClass('view')
+			var _strMensaje = pregunta.pregunta()
+			// encode base64
+			_strMensaje = btoa(_strMensaje)
+			var _strOpciones = ""
+			if(pregunta.requiredResponse){
+				if (pregunta.opciones) {
+					for (const key in pregunta.opciones) {
+						const element = pregunta.opciones[key];
+						
+						_strOpciones += `<button onclick="sendResponse(this, '${btoa(element.value)}', '${_strMensaje}')" type="button" class="btn bg-btn-custom">${element.value}</button>`
+					}
+				}
+				// console.log('imagen', pregunta.img);
+				receiverMSM(pregunta.img, _strMensaje, _strOpciones)
+				// DOMConver.append(optionsMSM.receiver(_strMensaje, _strOpciones))
+				// DOMConver[0].scrollTop = DOMConver[0].scrollHeight
+				return pregunta
+			}else{
+				// DOMConver[0].scrollTop = DOMConver[0].scrollHeight
+				
+				receiverMSM(pregunta.img, _strMensaje, _strOpciones)
+				if (pregunta.status) {
+					return checkPregunta(pregunta.continue())
+				}
+
+
+				// DOMConver.append(optionsMSM.espera)
+				// setTimeout(() => {
+				// 	// DOMConver.append(optionsMSM.receiver(_strMensaje, _strOpciones))
+				// 	// DOMConver[0].scrollTop = DOMConver[0].scrollHeight
+				// }, 1000)
+			}
+        }
+
+        loadIntegrantes()
+        // $('#comment')[0].value = ''
+        // $('#comment')[0].focus()
+        $('.reply').css('display', 'none')
+
+        var _preg
+
+        DOMConver.append(optionsMSM.espera)
+        setTimeout(() => {
+            inicioChat()
+            _preg = checkPregunta(jerarquia.inicio)
+        }, 1500)
+
+		
+			
+        var sendResponse = (elem, valor, mensajeAnterior) => {
+          $('.biendenida').remove()
+
+          _msm = atob(mensajeAnterior)
+          _valor = atob(valor)
+          if(elem){
+            elem.classList.add('clicked')
+          }
+
+          if (elem != null) {
+            DOMConver.append(optionsMSM.sender(_valor, true, _msm))
+          }else{
+            DOMConver.append(optionsMSM.sender(_valor, false, null))
+
+          }
+          // DOMConver.append(optionsMSM.sender(valor, true ? elem != null : false))
+          
+          DOMConver.append(optionsMSM.espera)
+          DOMConver[0].scrollTop = DOMConver[0].scrollHeight
+          setTimeout(() => {
+            if(_valor != null){
+                if(_preg.opciones){
+
+                    band = false
+
+                    for (const key in _preg.opciones) {
+                        if(_preg.opciones[key].value == _valor){
+                            _preg.respuesta(_valor)
+                            _preg.status = true
+                            _preg = checkPregunta(_preg.opciones[key].continue())
+                            
+                            band = true
+                            break
+                        }
+                    }
+                    if (!band) {
+                        // console.log("Opción no valida");
+                        receiverMSM(undefined, btoa("La seleccion no es valida, por favor selecciona una de las opciones que se encuentran en el ultimo mensaje"), "")
+                        checkPregunta(_preg)
+                    }
+                }else{
+                    _preg.respuesta(_valor)
+                    _preg.status = true
+                    _preg = checkPregunta(_preg.continue())
+                }
+            }else{
+                // console.log("No se puede enviar un valor nulo");
+                receiverMSM(undefined, btoa("No se puede enviar un valor nulo, por favor selecciona una de las opciones que se encuentran en el ultimo mensaje"), "")
+                checkPregunta(_preg)
+            }
+            // console.log('value WS-espera', $('.WS-espera'));
+            if($('.WS-espera').length > 0){
+              $('.WS-espera')[0].remove()
+            }
+
+          }, 1500);
+        }
+
+    // var actual = 0;
+
+    
+
+    $('#comment').on('keydown',function(e){
+      if(e.which == '13'){
+        sendQuestion()
+        $('#comment')[0].value = ''
+        $('#comment')[0].focus()
+      } 
+    });
+
+    // se agrega el mensaje de espera
+    // DOMConver.append(optionsMSM.espera)
+
+    // se remueve el mensaje de espera
+    // $('.WS-espera')[0].remove()
+    
+    // lado de envio 
+    // var opciones = `<button onclick="sendQuestion(this, 'Almacenamiento')" type="button" style="margin-bottom: 3px;" class="btn bg-btn-custom">Almacenamiento</button>`
+    // DOMConver.append(optionsMSM.receiver('Cual es tu nombre', opciones))
+    
+    // // lado de recepcion
+    // DOMConver.append(optionsMSM.sender('Juano'))
+    
+    // Nombre de usuario
+    // $('.heading-name-meta').text('Usuario (' + username + ')')
+
+    // bajar el scroll
+    // DOMConver[0].scrollTop = DOMConver[0].scrollHeight
+    
+    // sleep time
+
+    // setTimeout(() => {
+    // }, 2000);
+
+    var sendQuestion = () => {
+      // elem.classList.add('clicked')
+      
+      // var pregunta = _vpregunta
+      var pregunta = $('#comment')[0].value
+      
+      if(!pregunta.replace(/(\r\n|\n|\r)/gm,"").trim()){
+        alertaDialog(null, 'Debe ingresar al menos un valor en el campo texto', 'orange')
+        return;
+      }
+      
+      $('.heading-name-meta').text(`${pregunta} - (Usuario)`)
+      $('.reply').css('display', 'none')
+      _strMensaje = btoa(pregunta)
+      sendResponse(null, _strMensaje, "")
+      // DOMConver.append(optionsMSM.sender(pregunta))
+    }
+
+    $(".heading-compose").click(function() {
+      $(".side-two").css({
+        "left": "0"
+      });
+
+      if (allKeys.cantidad_almacenamiento){
+        $('#valueAlmacenamiento').html(allKeys.cantidad_almacenamiento)
+      }
+
+    });
+
+    $(".newMessage-back").click(function() {
+      $(".side-two").css({
+        "left": "-100%"
+      });
+    });
+
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+
+</script>
+{% endblock %}

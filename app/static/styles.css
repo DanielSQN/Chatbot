@@ -4,7 +4,7 @@ div,
 span {
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -17,6 +17,22 @@ span {
   box-sizing: default !important;
 } 
 
+.imgText {
+  /* padding: 10px; */
+  color: rgba(0, 0, 0, .5); 
+  text-shadow: none; 
+  border-radius: 8px;
+  /* background-color: #000 */
+  border: 2px solid #93918F;
+  /* border-left: 4px solid #EC4E02; */
+}
+
+.imgText img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
 
 .replyOf{
   background: rgba(0, 0, 0, .2);
@@ -46,6 +62,7 @@ body {
   text-decoration: none;
   margin-right: 4px;
   margin-bottom: 4px;
+  border: 1px solid #F54802;
 }
 
 .bg-btn-custom:focus{
@@ -183,7 +200,7 @@ body {
 .heading-dot i {
   text-align: right;
   padding: 5px;
-  color: #93918f;
+  color: #FDBB05;
   cursor: pointer;
 }
 
@@ -227,7 +244,7 @@ body {
   border-bottom: 1px solid #f7f7f7;
   height: 72px;
   margin: 0 !important;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .sideBar-body:hover {
@@ -239,10 +256,28 @@ body {
   padding: 0 !important;
 }
 
+.correo_person{
+  color: #93918F;
+}
+
+.correo_person:hover, .correo_person:focus{
+  color: #363738;
+}
+
+.fa-check-double{
+  color: #9a9a9aa8;
+}
+
+
+.view {
+  color: #0074d19c;
+}
+
 .avatar-icon img {
   border-radius: 50%;
   height: 49px;
   width: 49px;
+  cursor: pointer;
 }
 
 .sideBar-main {
@@ -392,7 +427,7 @@ body {
 }
 
 .message-body {
-  margin: 0 !important;
+  margin: 0 0 8px 0 !important;
   padding: 0 !important;
   width: auto;
   height: auto;
@@ -432,9 +467,10 @@ body {
 .message-time {
   margin: 0 !important;
   margin-left: 50px !important;
-  font-size: 12px;
+  font-size: 11px;
   text-align: right;
   color: #9a9a9a;
+  text-shadow: none !important;
 }
 
 .receiver {
@@ -504,16 +540,17 @@ body {
   cursor: pointer;
 }
 
-.reply-send {
+/* .reply-send {
   padding: 5px !important;
 }
+*/
 
 .reply-send i {
   text-align: center;
   padding: 5px !important;
   color: #93918f;
   cursor: pointer;
-}
+} 
 
 .reply-main {
   padding: 2px 5px !important;
@@ -555,13 +592,18 @@ body {
     color: #fff;
   }
 
+  .message-main-receiver {
+    /*padding: 10px 20px;*/
+    max-width: 80%;
+  }
+
   .app {
     top: 0;
     height: 100%;
   }
   .heading {
     height: 70px;
-    background-color: #009688;
+    background-color: #FDBB05;
   }
   .fa-2x {
     font-size: 2.3em !important;

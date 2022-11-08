@@ -3,419 +3,214 @@
 {% block title %}Welcome home{% endblock %}
 
 {% block content %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="container app">
-  <div class="row app-one">
-    <!-- Descomentar cuando el chat quede OK -->
-    <div class="col-sm-0 col-md-4 side">
-      <div class="side-one">
-        <div class="row heading">
+	<div class="row app-one">
+		<div class="col-sm-0 col-md-4 side">
+			<div class="side-one">
+				<div class="row heading">
+				<div class="col-sm-3 col-xs-3 heading-avatar">
+					<div class="heading-avatar-icon">
+						<img src="https://carrerasuniversitarias.com.co/logos/original/logo-fundacion-universitaria-compensar.webp">
+					</div>
+				</div>
+				<div class="col-sm-7 col-xs-7 heading-compose pull-right text-right">
+					<button style="margin-top: 5px;" class="btn bg-btn-custom">Resumen</button>
+					<!-- <span style="margin-top: 10px; display: inline-block;">
+						Resumen
+						<i onclick="" data-toggle="tooltip" data-placement="left" title="Resumen" class="fa fa-pie-chart fa-2x pull-right"></i>
+					</span> -->
+					<!-- <i class="" aria-hidden="true"></i> -->
+				</div>
 
-          <div class="col-sm-3 col-xs-3 heading-avatar">
-            <div class="heading-avatar-icon">
-              <img src="https://carrerasuniversitarias.com.co/logos/original/logo-fundacion-universitaria-compensar.webp">
-            </div>
-          </div>
-          <div class="col-sm-1 col-xs-1  heading-dot  pull-right">
-            <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
-          </div>
-          <div class="col-sm-2 col-xs-2 heading-compose pull-right">
-            <!-- <i class="fa fa-comments fa-2x  pull-right" aria-hidden="true"></i> -->
-            <i class="fa fa-pie-chart fa-2x pull-right" aria-hidden="true"></i>
-            <!-- <br> -->
-            <!-- <span>Analisis</span> -->
-          </div>
+				</div>
 
-        </div>
+				<div class="row searchBox">
+					<div class="col-sm-12 searchBox-inner">
+						<div class="form-group has-feedback text-center">
+							<h3>Integrantes</h3>
+						</div>
+					</div>
+				</div>
 
-        <div class="row searchBox">
-          <div class="col-sm-12 searchBox-inner">
-            <div class="form-group has-feedback">
-              <h3>Integrantes</h3>
-            </div>
-          </div>
-        </div>
+				<div class="row sideBar" id="integrantes"></div>
+			</div>
 
-        <div class="row sideBar">
+			<div class="side-two">
+				<div class="row newMessage-heading">
+					<div class="row newMessage-main">
+						<div class="col-sm-2 col-xs-2 newMessage-back">
+						<i class="fa fa-arrow-left" aria-hidden="true"></i>
+						</div>
+						<div class="col-sm-10 col-xs-10 newMessage-title">
+							<span>Volver</span>
+						</div>
+					</div>
+				</div>
 
-          <div class="row sideBar-body" onclick="detalle(`https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/daniel.png`, 'Daniel', 'Estudiante de Ingeniería de Sistemas, Project Manager')">
-            <div class="col-sm-3 col-xs-3 sideBar-avatar">
-              <div class="avatar-icon">
-                <img src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/daniel.png">
-              </div>
-            </div>
-            <div class="col-sm-9 col-xs-9 sideBar-main">
-              <div class="row">
-                <div class="col-sm-8 col-xs-8 sideBar-name">
-                  <span class="name-meta">Daniel Santiago Quintero
-                </span>
-                </div>
-                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
-                  <span class="time-meta pull-right">Project Manager
-                </span>
-                </div>
-              </div>
-            </div>
-          </div>
+				<div class="row composeBox">
+					<div class="col-sm-12 composeBox-inner" style="padding-left: 10px;">
+						<h3>Analisis</h3>
+					</div>
+				</div>
 
-          <div class="row sideBar-body" onclick="detalle(`https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/Cesar.PNG`, 'Cesar', 'Estudiante de Ingeniería de Sistemas, Analista')">
-            <div class="col-sm-3 col-xs-3 sideBar-avatar">
-              <div class="avatar-icon">
-                <img src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/Cesar.PNG">
-              </div>
-            </div>
-            <div class="col-sm-9 col-xs-9 sideBar-main">
-              <div class="row">
-                <div class="col-sm-8 col-xs-8 sideBar-name">
-                  <span class="name-meta">Cesar Augusto Cubillos
-                </span>
-                </div>
-                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
-                  <span class="time-meta pull-right">Analista
-                </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row sideBar-body" onclick="detalle(`https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/cristian.png`, 'Cristhian', 'Estudiante de Ingeniería de Sistemas, Analista / Diseñador')">
-            <div class="col-sm-3 col-xs-3 sideBar-avatar">
-              <div class="avatar-icon">
-                <img src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/cristian.png">
-              </div>
-            </div>
-            <div class="col-sm-9 col-xs-9 sideBar-main">
-              <div class="row">
-                <div class="col-sm-8 col-xs-8 sideBar-name">
-                  <span class="name-meta">Cristhian Fabian Triana
-                </span>
-                </div>
-                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
-                  <span class="time-meta pull-right">Analista / Diseñador
-                </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row sideBar-body" onclick="detalle(`https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/brayan.png`, 'Brayan', 'Estudiante de Ingeniería de Sistemas, Programador')">
-            <div class="col-sm-3 col-xs-3 sideBar-avatar">
-              <div class="avatar-icon">
-                <img src="https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/grh6fgzyjcuv/b/src/o/integrantes/brayan.png">
-              </div>
-            </div>
-            <div class="col-sm-9 col-xs-9 sideBar-main">
-              <div class="row">
-                <div class="col-sm-8 col-xs-8 sideBar-name">
-                  <span class="name-meta">Brayan Leonardo Sierra
-                </span>
-                </div>
-                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
-                  <span class="time-meta pull-right">Programador
-                </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row sideBar-body" onclick="detalle(`https://www.cruzrojacolombiana.org/wp-content/uploads/2019/12/Mujer-y-hombre_Mesa-de-trabajo-1-copia.png`, 'Sofia', 'Estudiante de Ingeniería de Sistemas, Analista / Diseñador')">
-            <div class="col-sm-3 col-xs-3 sideBar-avatar">
-              <div class="avatar-icon">
-                <img src="https://www.cruzrojacolombiana.org/wp-content/uploads/2019/12/Mujer-y-hombre_Mesa-de-trabajo-1-copia.png">
-              </div>
-            </div>
-            <div class="col-sm-9 col-xs-9 sideBar-main">
-              <div class="row">
-                <div class="col-sm-8 col-xs-8 sideBar-name">
-                  <span class="name-meta">Sofia Alejandra Blanco
-                </span>
-                </div>
-                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
-                  <span class="time-meta pull-right">Analista / Diseñador
-                </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row sideBar-body" onclick="detalle(`https://www.cruzrojacolombiana.org/wp-content/uploads/2019/12/Mujer-y-hombre_Mesa-de-trabajo-1-copia.png`, 'Karen', 'Estudiante de Ingeniería de Sistemas, Analista / Diseñador')">
-            <div class="col-sm-3 col-xs-3 sideBar-avatar">
-              <div class="avatar-icon">
-                <img src="https://www.cruzrojacolombiana.org/wp-content/uploads/2019/12/Mujer-y-hombre_Mesa-de-trabajo-1-copia.png">
-              </div>
-            </div>
-            <div class="col-sm-9 col-xs-9 sideBar-main">
-              <div class="row">
-                <div class="col-sm-8 col-xs-8 sideBar-name">
-                  <span class="name-meta">Karen Jineth Suta Anzola​
-                </span>
-                </div>
-                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
-                  <span class="time-meta pull-right">Analista / Diseñador
-                </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
+				<div class="row compose-sideBar">
+					<div class="row sideBar-body">
+						<div class="col-sm-3 col-xs-3 sideBar-avatar">
+						<div class="avatar-icon">
+							<img src="https://www.freeiconspng.com/thumbs/storage-icon/warehouse-storage-icon-22.png">
+						</div>
+						</div>
+						<div class="col-sm-9 col-xs-9 sideBar-main">
+						<div class="row">
+							<div class="col-sm-8 col-xs-8 sideBar-name">
+							<b><span class="name-meta">Almacenamiento</span></b>
+							<br>
+							<span class="name-meta" id="valueAlmacenamiento">Calculando</span>
+							</div>
+						</div>
+						</div>
+					</div>
 
-      <div class="side-two">
-        <div class="row newMessage-heading">
-          <div class="row newMessage-main">
-            <div class="col-sm-2 col-xs-2 newMessage-back">
-              <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            </div>
-            <div class="col-sm-10 col-xs-10 newMessage-title">
-              Volver
-            </div>
-          </div>
-        </div>
+					<div class="row sideBar-body">
+						<div class="col-sm-3 col-xs-3 sideBar-avatar">
+						<div class="avatar-icon">
+							<img src="https://symbols.getvecta.com/stencil_28/69_virtual-machine.8202662932.png">
+						</div>
+						</div>
+						<div class="col-sm-9 col-xs-9 sideBar-main">
+						<div class="row">
+							<div class="col-sm-8 col-xs-8 sideBar-name">
+							<b><span class="name-meta">Maquina Virtual</span></b>
+							<br>
+							<span class="name-meta" id="valueMV">Calculando ...</span>
+							</div>
+						</div>
+						</div>
+					</div>
 
-        <div class="row composeBox">
-          <div class="col-sm-12 composeBox-inner" style="padding-left: 10px;">
-            <h3>Analisis de los flujos indicados</h3>
-            <!-- <div class="form-group has-feedback">
-              <input id="composeText" type="text" class="form-control" name="searchText" placeholder="Search People">
-              <span class="glyphicon glyphicon-search form-control-feedback"></span>
-            </div> -->
-          </div>
-        </div>
+					<div class="row sideBar-body">
+						<div class="col-sm-3 col-xs-3 sideBar-avatar">
+						<div class="avatar-icon">
+							<img src="https://cdn.pixabay.com/photo/2020/03/17/17/46/database-4941338_1280.png">
+						</div>
+						</div>
+						<div class="col-sm-9 col-xs-9 sideBar-main">
+						<div class="row">
+							<div class="col-sm-8 col-xs-8 sideBar-name">
+							<b><span class="name-meta">Base de datos</span></b>
+							<br>
+							<span class="name-meta" id="valueMV">Calculando ...</span>
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-8 conversation">
 
-        <div class="row compose-sideBar">
-          <div class="row sideBar-body">
-            <div class="col-sm-3 col-xs-3 sideBar-avatar">
-              <div class="avatar-icon">
-                <img src="https://www.freeiconspng.com/thumbs/storage-icon/warehouse-storage-icon-22.png">
-              </div>
-            </div>
-            <div class="col-sm-9 col-xs-9 sideBar-main">
-              <div class="row">
-                <div class="col-sm-8 col-xs-8 sideBar-name">
-                  <b><span class="name-meta">Almacenamiento</span></b>
-                  <br>
-                  <span class="name-meta" id="valueAlmacenamiento">Calculando</span>
-                </div>
-              </div>
-            </div>
-          </div>
+			<!-- cabecera de la conversacion -->
+			<div class="row heading">
+				<div class="col-sm-2 col-md-1 col-xs-2 heading-avatar">
+				<div class="heading-avatar-icon">
+					<img src="https://www.cruzrojacolombiana.org/wp-content/uploads/2019/12/Mujer-y-hombre_Mesa-de-trabajo-1.png">
+				</div>
+				</div>
+				<div class="col-sm-8 col-xs-5 heading-name">
+					<a class="heading-name-meta">Usuario Anonimo</a>
+					<span class="heading-online">En Linea</span>
+				</div>
+				<div class="col-sm-2 col-xs-4 heading-dot pull-right">
+					<!-- <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i> -->
+					<!-- <button type="button" class="btn btn-secondary" > -->
+					<button onclick="finalizarChat()" style="margin-top: 5px;" class="btn bg-btn-custom">Finalizar Chat</button>
+					<!-- <i onclick="" data-toggle="tooltip" data-placement="left" title="Finalizar Chat" class="fa fa-solid fa-2x fa-flag-checkered pull-right finish-icon"></i> -->
+					<!-- </button> -->
+				</div>
+			</div>
 
-          <div class="row sideBar-body">
-            <div class="col-sm-3 col-xs-3 sideBar-avatar">
-              <div class="avatar-icon">
-                <img src="https://symbols.getvecta.com/stencil_28/69_virtual-machine.8202662932.png">
-              </div>
-            </div>
-            <div class="col-sm-9 col-xs-9 sideBar-main">
-              <div class="row">
-                <div class="col-sm-8 col-xs-8 sideBar-name">
-                  <b><span class="name-meta">Maquina Virtual</span></b>
-                  <br>
-                  <span class="name-meta" id="valueMV">Calculando ...</span>
-                </div>
-              </div>
-            </div>
-          </div>
+			<!-- All chat -->
+			<div class="row message" id="conversation"></div>
 
-          <div class="row sideBar-body">
-            <div class="col-sm-3 col-xs-3 sideBar-avatar">
-              <div class="avatar-icon">
-                <img src="https://cdn.pixabay.com/photo/2020/03/17/17/46/database-4941338_1280.png">
-              </div>
-            </div>
-            <div class="col-sm-9 col-xs-9 sideBar-main">
-              <div class="row">
-                <div class="col-sm-8 col-xs-8 sideBar-name">
-                  <b><span class="name-meta">Base de datos</span></b>
-                  <br>
-                  <span class="name-meta" id="valueMV">Calculando ...</span>
-                </div>
-              </div>
-            </div>
-          </div>
+			<!-- Seccion de cuadro de respuesta -->
+			<div class="row reply">
+				<div class="col-sm-1 col-xs-1 reply-emojis"></div>
+				
+				<div class="col-sm-10 col-xs-10 reply-main">
+				<textarea class="form-control" rows="1" id="comment"></textarea>
+				</div>
 
-
-        </div>
-      </div>
-    </div>
-
-  <!-- conversacion -->
-
-    <div class="col-sm-12 col-md-8 conversation">
-      <div class="row heading">
-        <div class="col-sm-1 col-md-1 col-xs-2 heading-avatar">
-          <div class="heading-avatar-icon">
-            <img src="https://www.cruzrojacolombiana.org/wp-content/uploads/2019/12/Mujer-y-hombre_Mesa-de-trabajo-1.png">
-          </div>
-        </div>
-        <div class="col-sm-9 col-xs-9 heading-name">
-          <a class="heading-name-meta">Usuario Anonimo</a>
-          <!-- <p class="heading-name-meta">Usuario Anonimo</p> -->
-          <span class="heading-online">Online</span>
-        </div>
-        <div class=" col-xs-1  heading-dot pull-right">
-          <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
-        </div>
-      </div>
-
-      <div class="row message" id="conversation">
-
-        <!-- <div class="row message-previous">
-          <div class="col-sm-12 previous">
-            <a onclick="previous(this)" id="ankitjain28" name="20">
-            Show Previous Message!
-            </a>
-          </div>
-        </div> -->
-
-
-        <!-- <div class="row message-body biendenida">
-          <div class="col-sm-12 mx-3 message-main-receiver-bienvenida">
-            <div class="receiver-bienvenida">
-              <div class="message-text text-center">
-                A continuación, podrá interactuar con el chatbot, para ello, debe escribir su mensaje y presionar enter. El chatbot te brindara un acompañamiento en tu proceso de decisión frente a la migración a la nube que mejor se adapte a tus necesidades.
-                <br>
-                <br>
-                <small style="font-weight: 0;">Proyecto desarrollado para la asignatura "Desarrollo de sistemas de informacion"</small>
-              </div>
-              <span class="message-time pull-right">
-                Sun
-              </span>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- <div class="row message-body WS-espera">
-            <div class="col-sm-12 message-main-receiver">
-              <div class="receiver">
-                <div class="message-text-espera">
-                 ...
-                </div>
-              </div>
-            </div>
-        </div> -->
-
-        <!-- <div class="row message-body">
-          <div class="col-sm-12 message-main-receiver">
-            <div class="receiver">
-              <div class="message-text">
-               Hi, what are you doing?!
-              </div>
-              <div style="margin-top: 5px;">
-                <button onclick="sendQuestion(this, 'Almacenamiento')" type="button" style="margin-bottom: 3px;" class="btn bg-btn-custom">Almacenamiento</button>
-                <button onclick="sendQuestion(this, 'Maquina Virtual')" type="button" style="margin-bottom: 3px;" class="btn bg-btn-custom">Maquina Virtual</button>
-              </div>
-              <span class="message-time pull-right">
-                Sun
-              </span>
-            </div>
-          </div>
-        </div> -->
-
-        
-        <!-- <div class="row message-body">
-          <div class="col-sm-12 message-main-sender">
-            <div class="sender">
-              <div class="message-text">
-                I am doing nothing man!dsadsa
-              </div>
-              <span class="message-time pull-right">
-                Sun
-              </span>
-            </div>
-          </div>
-        </div> -->
-        
-      </div>
-
-      <div class="row reply">
-        <div class="col-sm-1 col-xs-1 reply-emojis">
-          <!-- <i class="fa fa-smile-o fa-2x"></i> -->
-        </div>
-        <div class="col-sm-9 col-xs-9 reply-main">
-          <textarea class="form-control" rows="1" id="comment"></textarea>
-        </div>
-        <div class="col-sm-1 col-xs-1 reply-recording">
-          <!-- <a href="#" onclick="sendAudio()">
-            <i class="fa fa-microphone fa-2x" aria-hidden="true"></i>
-          </a> -->
-          <a href="#" onclick="alert('La opcion se encuentra en desarrollo')">
-            <i class="fa fa-microphone fa-2x" aria-hidden="true"></i>
-          </a>
-        </div>
-        <div class="col-sm-1 col-xs-1 reply-send">
-            <a href="#" onclick="sendQuestion()">
-                <i class="fa fa-send fa-2x" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-    </div>
-  </div>
+				<div class="col-sm-1 col-xs-1 reply-send">
+					<a href="#" onclick="sendQuestion()">
+						<i class="fa fa-send fa-2x" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>
+			
+		</div>
+	</div>
 </div>
 
-
-<style type="text/css">
-
-</style>
-
 <script>
+	var detalle = (img, nombre, correo, rol, moreInfo) => {
+		$.confirm({
+			backgroundDismiss: 'buttonName',
+			title: '',
+			content: `
+			<img src="${img}">
+			<h3>${nombre}</h3>
+			<p>${rol}</p>
+			<hr>
+			<a href="mailto:${correo}">${correo}</a>
+			<p>${moreInfo}</p>
 
+			`,
+			buttons: {
+				close: {
+				text: 'OK'
+				}
+			}
+		});
+	}
 
-  var detalle = (e, name, detail) => {
-    $.confirm({
-        backgroundDismiss: 'buttonName',
-        title: '',
-        content: `
-        <img src="${e}">
-        <h3>${name}</h3>
-        <p>${detail}</p>
-        `,
-        buttons: {
-            close: {
-              text: 'Cerrar'
-            }
-        }
-    });
-  }
+	var alertaDialog = (msmTitle, msmContent, color) => {
+		$.confirm({
+			title: msmTitle,
+			content: msmContent,
+			theme: 'modern',
+			buttons: {
+			ok: {
+				text: 'Aceptar', // text for button
+				btnClass: `btn-${color}`, // class for the button
+				keys: ['enter', 'a'], // keyboard event for button
+			}
+			}
+		});
+	}
 
-var alertaDialog = (msmTitle, msmContent, color) => {
-    $.confirm({
-        title: msmTitle,
-        content: msmContent,
-        // autoClose: 'ok|4000',
-        theme: 'modern',
-        buttons: {
-          ok: {
-            text: 'Aceptar', // text for button
-            btnClass: `btn-${color}`, // class for the button
-            keys: ['enter', 'a'], // keyboard event for button
-          }
-        }
-    });
-  }
-
-  var alertaSpeech = (msmTitle, msmContent, color) => {
-    console.log('alertaSpeech');
-     // toggle open close.
-
-    
-  }
+	var alertaSpeech = (msmTitle, msmContent, color) => {
+		console.log('alertaSpeech');
+	}
 
     var optionsMSM = {
         bienvenida: () => {
         return `
-        <div class="row message-body biendenida">
-          <div class="col-sm-12 mx-3 message-main-receiver-bienvenida">
-            <div class="receiver-bienvenida">
-              <div class="message-text text-center">
-                A continuación, podrá interactuar con el chatbot, para ello, debe escribir su mensaje y/o seleccionar alguna de las opciones prepuestas. El chatbot te brindara un acompañamiento en tu proceso de decisión frente a la migración a la nube que mejor se adapte a tus necesidades.
-                <br>
-                <br>
-                <small style="font-weight: 0;">Proyecto desarrollado para la asignatura "Desarrollo de sistemas de información"</small>
+          <div class="row message-body biendenida">
+            <div class="col-sm-12 mx-3 message-main-receiver-bienvenida">
+              <div class="receiver-bienvenida">
+                <div class="message-text text-center">
+                  Soy un <b>Chatbot</b> desarrollado por un equipo de estudiantes, como proyecto para la asignatura <i>"Desarrollo de sistemas de información"</i> de la carrera Ingenieria de sistemas 6to Semestre.
+                  <br>
+                  <br>
+                  Podrás interactuar conmigo seleccionando alguna de las opciones propuestas para la pregunta en la que nos encontremos. Espero, poder brindar un acompañamiento optimo en tu proceso de decisión frente a la migración a la nube que mejor se adapte a tus necesidades.
+                </div>
+                <span class="message-time pull-right">
+                  ${formatAMPM(new Date)}
+                  <i class="fa fa-light fa-check-double"></i>
+                </span>
               </div>
-              <span class="message-time pull-right">
-                ${new Date().toLocaleTimeString()}
-              </span>
             </div>
-          </div>
-        </div>`
+          </div>`
         },
         espera : `
         <div class="row message-body WS-espera">
@@ -442,10 +237,23 @@ var alertaDialog = (msmTitle, msmContent, color) => {
         //         </div>
         //         </div>`
         //     },
-        receiver : (mensaje, options) => {
+        receiver : (img, url, mensaje, options) => {
             return `<div class="row message-body">
                       <div class="col-sm-12 message-main-receiver">
                         <div class="receiver">
+						  ${
+							img
+							?
+								`<div class="imgText">
+									<img src="${img}" alt="question">
+								</div>`
+							: url
+								?
+								`<div class="imgText" style="padding: 10px 0">
+									<iframe width="100%" height="100%" src="${url}"></iframe>
+								</div>`
+								: '' 
+						  }
                           <div class="message-text">
                             ${mensaje}
                           </div>
@@ -453,7 +261,7 @@ var alertaDialog = (msmTitle, msmContent, color) => {
                             ${options}
                           </div>
                           <span class="message-time pull-right">
-                            ${new Date().toLocaleTimeString()}
+                            ${formatAMPM(new Date)}
                           </span>
                         </div>
                       </div>
@@ -464,427 +272,200 @@ var alertaDialog = (msmTitle, msmContent, color) => {
                         ? `<div class="replyOf">
                             <span class="replyOf-title">Chatbot - Cloud</span>
                             <br>
-                            <span class="replyOf-text">${msmBefore}</span>
+                            <span class="replyOf-text">${
+														msmBefore
+														}</span>
                           </div>`
                         : ``;
 
             return `
             <div class="row message-body">
-            <div class="col-sm-12 message-main-sender">
-                <div class="sender">
-                  ${reply}
-                <div class="message-text">
-                    ${mensaje}
-                </div>
-                <span class="message-time pull-right">
-                    ${new Date().toLocaleTimeString()}
-                </span>
-                </div>
-            </div>
+              <div class="col-sm-12 message-main-sender">
+                  <div class="sender">
+                    ${reply}
+                  <div class="message-text">
+                      ${mensaje}
+                  </div>
+                  <span class="message-time pull-right">
+                      ${formatAMPM(new Date)}
+                      <i class="fa fa-light fa-check-double"></i>
+                  </span>
+                  </div>
+              </div>
             </div> `
         }
     }
 
+	function formatAMPM(date) {
+		var hours = date.getHours();
+		var minutes = date.getMinutes();
+		var ampm = hours >= 12 ? 'p.m.' : 'a.m.';
+		hours = hours % 12;
+		hours = hours ? hours : 12; // the hour '0' should be '12'
+		minutes = minutes < 10 ? '0'+minutes : minutes;
+		var strTime = hours + ':' + minutes + ' ' + ampm;
+		return strTime;
+	}
+
+
     var bestRecomendacionAlmacenamiento = (type, cantidadAlmacenamiento) => {
-      
-      var costos = [
-        {
-          type: "Standard",
-          cantidad: "100 GB",
-          precioMes: "$ 2.3",
-          precioxGB: "$ 0.023",
-          inf : "Amazon Web Services"
-        }
-        ,{
-          type: "Standard",
-          cantidad: "250 GB",
-          precioMes: "$ 5.75",
-          precioxGB: "$ 0.023",
-          inf : "Amazon Web Services"
-        }
-        ,{
-          type: "Standard",
-          cantidad: "500 GB",
-          precioMes: "$ 11.44",
-          precioxGB: "$ 0.02",
-          inf : "Azure de Microsoft"
-        }
-        ,{
-          type: "Standard",
-          cantidad: "750 GB",
-          precioMes: "$ 16.64",
-          precioxGB: "$ 0.02",
-          inf : "Azure de Microsoft"
-        }
-        ,{
-          type: "Standard",
-          cantidad: "1000 GB",
-          precioMes: "$ 22.34",
-          precioxGB: "$ 0.02",
-          inf : "Azure de Microsoft"
-        }
-        ,{
-          type: "Standard",
-          cantidad: "5000 GB",
-          precioMes: "$ 107.54",
-          precioxGB: "$ 0.02",
-          inf : "Azure de Microsoft"
-        }
-        ,{
-          type: "Standard",
-          cantidad: "10000 GB",
-          precioMes: "$ 214.04",
-          precioxGB: "$ 0.02",
-          inf : "Azure de Microsoft"
-        }
-        
-        // Premium
+		
+		var valueFilter = costos.filter((item) => item.type == type && item.cantidad == cantidadAlmacenamiento)[0]
+		var arrFilter = [
+			`¡Muy bien! Ya que has elegido ${cantidadAlmacenamiento} y con un servicio ${type}.<br>Te recomendare <b>${valueFilter.inf}</b>, que tiene un costo de U${valueFilter.precioxGB} por GB y una tarifa al mes de U${valueFilter.precioMes}`
+			
+			,`¡Excelente, teniendo en cuenta que quieres un servicio de almacenamiento ${type} de ${allKeys.cantidad_almacenamiento}.<br>Te recomiendo <b>${valueFilter.inf}</b>, este tiene un precio de U${valueFilter.precioxGB} por GB lo que significa que te costara U${valueFilter.precioMes} por un mes`
+		]
 
-        ,{
-          type: "Premium",
-          cantidad: "100 GB",
-          precioMes: "$ 2",
-          precioxGB: "$ 0.02",
-          inf : "Google Cloud"
-        }
-        ,{
-          type: "Premium",
-          cantidad: "250 GB",
-          precioMes: "$ 5",
-          precioxGB: "$ 0.02",
-          inf : "Google Cloud"
-        }
-        ,{
-          type: "Premium",
-          cantidad: "500 GB",
-          precioMes: "$ 10",
-          precioxGB: "$ 0.02",
-          inf : "Google Cloud"
-        }
-        ,{
-          type: "Premium",
-          cantidad: "750 GB",
-          precioMes: "$ 15",
-          precioxGB: "$ 0.02",
-          inf : "Google Cloud"
-        }
-        ,{
-          type: "Premium",
-          cantidad: "1000 GB",
-          precioMes: "$ 20",
-          precioxGB: "$ 0.02",
-          inf : "Google Cloud"
-        }
-        ,{
-          type: "Premium",
-          cantidad: "5000 GB",
-          precioMes: "$ 100",
-          precioxGB: "$ 0.02",
-          inf : "Google Cloud"
-        }
-        ,{
-          type: "Premium",
-          cantidad: "10000 GB",
-          precioMes: "$ 200",
-          precioxGB: "$ 0.02",
-          inf : "Google Cloud"
-        }
-      ]
-
-      var valueFilter = costos.filter((item) => item.type == type && item.cantidad == cantidadAlmacenamiento)[0]
-
-      var arrFilter = [
-        `¡Muy bien! Ya que has elegido ${cantidadAlmacenamiento} y con un servicio ${type}.<br>Te recomendare <b>${valueFilter.inf}</b>, que tiene un costo de U${valueFilter.precioxGB} por GB y una tarifa al mes de U${valueFilter.precioMes}`
-        , `¡Excelente, teniendo en cuenta que quieres un servicio de almacenamiento ${type} de ${allKeys.cantidad_almacenamiento}.<br>Te recomiendo <b>${valueFilter.inf}</b>, este tiene un precio de U${valueFilter.precioxGB} por GB lo que significa que te costara U${valueFilter.precioMes} por un mes`
-      ]
-
-      return arrFilter[Math.floor(Math.random() * arrFilter.length)]
+		return arrFilter[Math.floor(Math.random() * arrFilter.length)]     
     }
 
-    var allKeys = {}
+    	var allKeys = {}
+        var loadIntegrantes = () => {
 
-        var jerarquia = {
-            getNombre: {
-                pregunta: () => {
-                    $('.reply').css('display', 'block')
-                    inicioChat()
-                    return `Para proceder con la conversación, por favor, indícame tu nombre`
-                },
-                requiredResponse: true,
-                respuesta: (valor) => {
-                    allKeys.nombre = valor
-                },
-                status: true,
-                continue: () => jerarquia.binvenida
-            },
-            binvenida: {
-                pregunta: () => {
-                    return `Buen día <b>${allKeys.nombre}</b>, es un gusto saludarte. <br>Te damos la bienvenida al Chatbot Cloud`
-                },
-                requiredResponse: false,
-                status: true,
-                continue: () => jerarquia.menu
-            },
-            menu: {
-                pregunta: () => {
-                    return `¿Qué estas buscando? Selecciona una de las siguientes opciones`
-                },
-                opciones: {
-                    Almacenamiento : {
-                        value : "Almacenamiento",
-                        continue: () => jerarquia.almacenamiento
-                    },
-                    MaquinaVirtual : {
-                        value : "Maquina Virtual",
-                        continue: () => jerarquia.maquinaVirtual
-                    },
-                    BaseDatos : {
-                        value : "Base de Datos",
-                        continue: () => jerarquia.baseDatos
-                    },
-                },
-                requiredResponse: true,
-                respuesta: (valor) => {
-                    allKeys.menu = valor
-                },
-                status: true
-            },
-            maquinaVirtual: {
-                pregunta: () => {
-                    return `El camino jeraquico de maquina virtual actualmente no se encuentra disponible, por favor, selecciona otra opción`
-                },
-                requiredResponse: false,
-                status: true,
-                continue: () => jerarquia.menu
-            },
-            baseDatos: {
-                pregunta: () => {
-                    return `El camino jeraquico de base de datos actualmente no se encuentra disponible, por favor, selecciona otra opción`
-                },
-                requiredResponse: false,
-                status: true,
-                continue: () => jerarquia.menu
-            },
-            almacenamiento: {
-                pregunta: () => {
-                    return `¡Muy bien! ¿Cuánto almacenamiento vas a necesitar?`
-                },
-                opciones: {
-                    uno : {
-                        value : "100 GB",
-                        continue: () => jerarquia.confirmAlma
-                    },
-                    dos : {
-                        value : "250 GB",
-                        continue: () => jerarquia.confirmAlma
-                    },
-                    tres : {
-                        value : "500 GB",
-                        continue: () => jerarquia.confirmAlma
-                    },
-                    cuatro : {
-                        value : "750 GB",
-                        continue: () => jerarquia.confirmAlma
-                    },
-                    cinco : {
-                        value : "1000 GB",
-                        continue: () => jerarquia.confirmAlma
-                    },
-                    seis : {
-                        value : "5000 GB",
-                        continue: () => jerarquia.confirmAlma
-                    },
-                    siene : {
-                        value : "10000 GB",
-                        continue: () => jerarquia.confirmAlma
-                    }
-                },
-                requiredResponse: true,
-                respuesta: (valor) => {
-                    allKeys.cantidad_almacenamiento = valor
-                },
-                status: true
-            },
-            confirmAlma: {
-                pregunta: () => {
-                    return `¿Requieres ${allKeys.cantidad_almacenamiento} de almacenamiento?`
-                },
-                opciones: {
-                    Si : {
-                        value : "!Asi es¡",
-                        continue: () => jerarquia.continueAlmac
-                    },
-                    No : {
-                        value : "No, debo cambiar mi eleccion",
-                        continue: () => jerarquia.almacenamiento
-                    }
-                },
-                requiredResponse: true,
-                respuesta: (valor) => {
-                    allKeys.confirmAlmacenamiento = valor
-                },
-                status: true
-            },
-            continueAlmac: {
-                pregunta: () => {
-                    return `Esta bien, ahora me puedes decir si quieres servicio Standard o Premium. <br><br>La diferencia esta en los servicios adicionales que ofrece el servicio Premium como licencias, aplicaciones de escritorio, etc. (Depende de cada proveedor)`
-                },
-                opciones: {
-                    std : {
-                        value : "Standard",
-                        continue: () => jerarquia.confirmStandard
-                    },
-                    prm : {
-                        value : "Premium",
-                        continue: () => jerarquia.confirmPremium
-                    }
-                },
-                requiredResponse: true,
-                respuesta: (valor) => {
-                    allKeys.tipoServAlmacenamiento = valor
-                },
-                status: true
-            },
-            confirmStandard: {
-                pregunta: () => {
-                    return `¡Muy bien yo tambien prefiero el servicio Standard!`
-                },
-                requiredResponse: false,
-                status: true,
-                continue: () => jerarquia.msmStandard
-            },
-            confirmPremium: {
-                pregunta: () => {
-                    return `¡Que buena desición, el servicio Premium es lo mejor!`
-                },
-                requiredResponse: false,
-                status: true,
-                continue: () => jerarquia.msmPremium
-            },
-            msmStandard: {
-                pregunta: () => {
-                    // return `¡Excelente, teniendo en cuenta que quieres un servicio de almacenamiento Standard de ${allKeys.cantidad_almacenamiento}.<br>Te recomiendo <b>Azure de Microsoft</b>, este tiene un precio de U$ 0,02 por GB lo que significa que te costara U$ XXXX por un mes`
+          // call to API to get integrantes
+          var htmlIntegrantes = ''
 
-                    return bestRecomendacionAlmacenamiento('Standard', allKeys.cantidad_almacenamiento)
-                },
-                requiredResponse: false,
-                status: true,
-                continue: () => jerarquia.continuacionChat
-            },
-            msmPremium: {
-                pregunta: () => {
-                    // return `¡Muy bien! Ya que has elegido ${allKeys.cantidad_almacenamiento} y con un servicio Premium.<br>Te recomendare <b>Azure de Microsoft</b>, que tiene un costo de U$ 0,15 por GB y una tarifa al mes de U$XXX`
+          fetch('/integrantes')
+          .then(response => response.json())
+          .then(integrantes => {
+            integrantes.forEach( item => {
+              htmlIntegrantes += `<div class="row sideBar-body">
+                                  <div class="col-sm-3 col-xs-3 sideBar-avatar">
+                                    <div class="avatar-icon" onclick="detalle('${item.img}', '${item.nombre}', '${item.correo}','${item.rol}', '${item.moreInfo}')">
+                                      <img src="${item.img}">
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-9 col-xs-9 sideBar-main">
+                                    <div class="row">
+                                      <div class="col-sm-12 col-xs-12 sideBar-name">
+                                        <span class="name-meta">${item.nombre}</span>
+										<span class="name-meta"><small><a class="correo_person" href="mailto:${item.correo}" style="text-decoration:none">${item.correo}</a></small></span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>`
+            })
+  
+            $('#integrantes').html(htmlIntegrantes)
+          })
+          // var integrantes = 
 
-                    return bestRecomendacionAlmacenamiento('Premium', allKeys.cantidad_almacenamiento)
-                },
-                requiredResponse: false,
-                status: true,
-                continue: () => jerarquia.continuacionChat
-            },
-            continuacionChat: {
-                pregunta: () => {
-                    return `Finalizaste la configuracion para almacenamiento <br>¿Te ayudo en algo mas?`
-                },
-                opciones: {
-                    si : {
-                        value : "Si, Por favor volver al menu",
-                        continue: () => jerarquia.menu
-                    },
-                    no : {
-                        value : "No, Gracias por tu servicio",
-                        continue: () => jerarquia.final
-                    }
-                },
-                requiredResponse: true,
-                respuesta: (valor) => {
-                    allKeys.continuacionChat = valor
-                },
-                status: true
-            },
-            final: {
-                pregunta: () => {
-                    return `${allKeys.nombre}, el chat se ha finalizado con exito, gracias por usar nuestros servicios <br><br>Esperamos que te haya sido de ayuda, si tienes alguna duda o sugerencia puedes escribirnos a nuestro correo: <a href=\`mailto:dsantiagoquintero@ucompensar.edu.co\`>dsantiagoquintero@ucompensar.edu.co</a>`
-                },
-                opciones: {
-                    si : {
-                        value : "Iniciar chat nuevamente",
-                        continue: () => jerarquia.getNombre
-                    }
-                },
-                requiredResponse: true,
-                respuesta: (valor) => {
-                    allKeys.inicioChat = valor
-                },
-                status: true
-            }
         }
 
         var inicioChat = () => {
+			allKeys = {}	
 
-          $('#valueAlmacenamiento').html('Calculando ...')
-
-          $('#comment')[0].value = ''
-          $('#comment')[0].focus()
-          
-          $('.heading-name-meta').text(`Usuario Anonimo`)
-          $('#conversation').html('')
-          DOMConver.append(optionsMSM.bienvenida())
-          // DOMConver.append(optionsMSM.espera)
+			$('#valueAlmacenamiento').html('Calculando ...')
+			
+			$('.heading-name-meta').text(`Usuario Anonimo`)
+			$('#conversation').html('')
+			DOMConver.append(optionsMSM.bienvenida())
         } 
 
         var DOMConver = $('#conversation')
         DOMConver.append(optionsMSM.bienvenida())
 
-        var receiverMSM = (msm, options) => {
-          DOMConver.append(optionsMSM.receiver(msm, options))
+        var receiverMSM = (img, url, msm, options) => {
+          // decode bas64
+          DOMConver.append(optionsMSM.receiver(img, url, atob(msm), options))
           DOMConver[0].scrollTop = DOMConver[0].scrollHeight
         }
 
         var checkPregunta = (pregunta) => {
-            var _strMensaje = pregunta.pregunta()
-            var _strOpciones = ""
-            if(pregunta.requiredResponse){
-                if (pregunta.opciones) {
-                    for (const key in pregunta.opciones) {
-                        const element = pregunta.opciones[key];
-                        _strOpciones += `<button onclick="sendResponse(this, '${element.value}', '${_strMensaje}')" type="button" class="btn bg-btn-custom">${element.value}</button>`
-                    }
-                }
-                receiverMSM(_strMensaje, _strOpciones)
-                // DOMConver.append(optionsMSM.receiver(_strMensaje, _strOpciones))
-                // DOMConver[0].scrollTop = DOMConver[0].scrollHeight
-                return pregunta
-              }else{
-                receiverMSM(_strMensaje, _strOpciones)
-                // DOMConver.append(optionsMSM.receiver(_strMensaje, _strOpciones))
-                // DOMConver[0].scrollTop = DOMConver[0].scrollHeight
-                if (pregunta.status) {
-                    return checkPregunta(pregunta.continue())
-                }
-            }
-            
+			$('.fa-check-double').addClass('view')
+			var _strMensaje = pregunta.pregunta()
+			// encode base64
+			_strMensaje = btoa(_strMensaje)
+			var _strOpciones = ""
+			if(pregunta.requiredResponse){
+				if (pregunta.opciones) {
+					for (const key in pregunta.opciones) {
+						const element = pregunta.opciones[key];
+						
+						_strOpciones += `<button onclick="sendResponse(this, '${btoa(element.value)}', '${_strMensaje}')" type="button" class="btn bg-btn-custom">${element.value}</button>`
+					}
+				}
+				// console.log('imagen', pregunta.img);
+				receiverMSM(pregunta.img, pregunta.url ,_strMensaje, _strOpciones)
+				// DOMConver.append(optionsMSM.receiver(_strMensaje, _strOpciones))
+				// DOMConver[0].scrollTop = DOMConver[0].scrollHeight
+				return pregunta
+			}else{
+				// DOMConver[0].scrollTop = DOMConver[0].scrollHeight
+				
+				receiverMSM(pregunta.img, pregunta.url ,_strMensaje, _strOpciones)
+				if (pregunta.status) {
+					return checkPregunta(pregunta.continue())
+				}
+
+
+				// DOMConver.append(optionsMSM.espera)
+				// setTimeout(() => {
+				// 	// DOMConver.append(optionsMSM.receiver(_strMensaje, _strOpciones))
+				// 	// DOMConver[0].scrollTop = DOMConver[0].scrollHeight
+				// }, 1000)
+			}
         }
 
-        $('#comment')[0].value = ''
-        $('#comment')[0].focus()
+        loadIntegrantes()
+        // $('#comment')[0].value = ''
+        // $('#comment')[0].focus()
+        $('.reply').css('display', 'none')
 
         var _preg
 
         DOMConver.append(optionsMSM.espera)
         setTimeout(() => {
-            _preg = checkPregunta(jerarquia.getNombre)
-            // $('.WS-espera')[0].remove()
+            inicioChat()
+            _preg = checkPregunta(jerarquia.inicio)
         }, 1500)
 
+
+		var finalizarChat = () => {
+			// allKeys = {}
+			// DOMConver.html('')
+			
+			DOMConver.append(optionsMSM.espera)
+			DOMConver[0].scrollTop = DOMConver[0].scrollHeight
+			setTimeout(() => {
+				$('.WS-espera').remove()
+				_preg = checkPregunta(jerarquia.final)
+			}, 1500)
+		}
+		
+		function escapeXml(unsafe) {
+			return unsafe.replace(/[<>&'"]/g, function (c) {
+				switch (c) {
+					case '<': return '&lt;';
+					case '>': return '&gt;';
+					case '&': return '&amp;';
+					case '\'': return '&apos;';
+					case '"': return '&quot;';
+				}
+			});
+		}
+			
         var sendResponse = (elem, valor, mensajeAnterior) => {
+          $('.biendenida').remove()
+
+          _msm = atob(mensajeAnterior)
+          _valor = atob(valor)
+		//   console.log('valor', _msm, _msm.length);
+		_msm = escapeXml(_msm)
+
+		_msm = _msm.length > 300
+		? _msm.substring(0, 300) + '...'
+		: _msm
+
           if(elem){
             elem.classList.add('clicked')
           }
 
           if (elem != null) {
-            DOMConver.append(optionsMSM.sender(valor, true, mensajeAnterior))
+            DOMConver.append(optionsMSM.sender(_valor, true, _msm))
           }else{
-            DOMConver.append(optionsMSM.sender(valor, false, null))
+            DOMConver.append(optionsMSM.sender(_valor, false, null))
 
           }
           // DOMConver.append(optionsMSM.sender(valor, true ? elem != null : false))
@@ -892,14 +473,14 @@ var alertaDialog = (msmTitle, msmContent, color) => {
           DOMConver.append(optionsMSM.espera)
           DOMConver[0].scrollTop = DOMConver[0].scrollHeight
           setTimeout(() => {
-            if(valor != null){
+            if(_valor != null){
                 if(_preg.opciones){
 
                     band = false
 
                     for (const key in _preg.opciones) {
-                        if(_preg.opciones[key].value == valor){
-                            _preg.respuesta(valor)
+                        if(_preg.opciones[key].value == _valor){
+                            _preg.respuesta(_valor)
                             _preg.status = true
                             _preg = checkPregunta(_preg.opciones[key].continue())
                             
@@ -909,22 +490,22 @@ var alertaDialog = (msmTitle, msmContent, color) => {
                     }
                     if (!band) {
                         // console.log("Opción no valida");
-                        receiverMSM("La seleccion no es valida, por favor selecciona una de las opciones que se encuentran en el ultimo mensaje", "")
+                        receiverMSM(undefined, undefined, btoa("La seleccion no es correcta, por favor selecciona una de las opciones que se encuentran en el ultimo mensaje"), "")
                         checkPregunta(_preg)
                     }
                 }else{
-                    _preg.respuesta(valor)
+                    _preg.respuesta(_valor)
                     _preg.status = true
                     _preg = checkPregunta(_preg.continue())
                 }
             }else{
                 // console.log("No se puede enviar un valor nulo");
-                receiverMSM("No se puede enviar un valor nulo, por favor selecciona una de las opciones que se encuentran en el ultimo mensaje", "")
+                receiverMSM(undefined, undefined, btoa("No se puede enviar un valor nulo, por favor selecciona una de las opciones que se encuentran en el ultimo mensaje"), "")
                 checkPregunta(_preg)
             }
             // console.log('value WS-espera', $('.WS-espera'));
             if($('.WS-espera').length > 0){
-              $('.WS-espera')[0].remove()
+              $('.WS-espera').remove()
             }
 
           }, 1500);
@@ -967,12 +548,8 @@ var alertaDialog = (msmTitle, msmContent, color) => {
     // }, 2000);
 
     var sendQuestion = () => {
-
-
-      
       // elem.classList.add('clicked')
-      $('.biendenida').remove()
-
+      
       // var pregunta = _vpregunta
       var pregunta = $('#comment')[0].value
       
@@ -980,10 +557,9 @@ var alertaDialog = (msmTitle, msmContent, color) => {
         alertaDialog(null, 'Debe ingresar al menos un valor en el campo texto', 'orange')
         return;
       }
-      
       $('.reply').css('display', 'none')
-      $('.heading-name-meta').text(`${pregunta} - (Usuario)`)
-      sendResponse(null, pregunta)
+      _strMensaje = btoa(pregunta)
+      sendResponse(null, _strMensaje, "")
       // DOMConver.append(optionsMSM.sender(pregunta))
     }
 

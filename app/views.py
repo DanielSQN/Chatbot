@@ -1,8 +1,9 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 from app import app
 import re
 import random
 import time
+import json
 
 def get_response(user_input):
     # validate if user input is a string
@@ -97,6 +98,25 @@ def json_example():
     # return {
     #     "response": get_response(user_input)
     # }
+
+@app.route('/questions', methods=['GET'])
+def allQuestions():
+    # read json file
+    with open('app/static/Cloud-Chatbot.json') as json_file:
+        data = json.load(json_file)
+        return jsonify(data)
+
+# @app.route('/costos', methods=['GET'])
+# def getcostos():
+#     with open('app/static/costos.json') as json_file:
+#         data = json.load(json_file)
+#         return jsonify(data)
+
+@app.route('/integrantes', methods=['GET'])
+def getIntegrantes():
+    with open('app/static/integrantes.json') as json_file:
+        data = json.load(json_file)
+        return jsonify(data)
 
 @app.route('/iHaveQuestion', methods=['GET'])
 def getjson_example():
